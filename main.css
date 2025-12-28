@@ -870,4 +870,247 @@ body {
   .footer{
     padding: 10px;
   }
+
+  /* SMALL PHONES (361px - 400px) */
+@media (max-width: 400px) {
+
+  /* HERO */
+  .hero {
+    padding: 45px 22px;
+    gap: 35px;
+  }
+
+  .hero-right h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .scribble {
+    width: 240px;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.45;
+  }
+
+  /* BOX SCRIBBLES */
+  .box-scribble,
+  .box-scribble2 {
+    width: 260px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.4;
+  }
+
+  /* WORKS SCRIBBLES */
+  .works-scribble,
+  .works-scribble2 {
+    width: 110px;
+    top: -40px;
+    opacity: 0.4;
+  }
+
+  .works-scribble { left: 25%; }
+  .works-scribble2 { left: 75%; }
+
+  /* CONTACT SCRIBBLES */
+  .contact-scribble,
+  .contact-scribble2 {
+    width: 110px;
+    top: 0;
+    opacity: 0.4;
+  }
+
+  .contact-scribble { left: 25%; }
+  .contact-scribble2 { left: 75%; }
+}
+
+
+  /* EXTRA SMALL DEVICES (320px - 360px) */
+@media (max-width: 360px) {
+
+  /* GLOBAL */
+  body {
+    font-size: 14px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .navbar nav {
+    right: 20px;
+    top: 70px;
+    width: calc(100% - 40px);
+  }
+
+  .navbar nav a {
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .hero-right h1 {
+    font-size: 26px;
+    white-space: normal; /* FIX overflow */
+    line-height: 1.2;
+  }
+
+  .hero-right p {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .scribble {
+    width: 220px;
+    top: -60px;
+    left: 50%;
+  }
+
+  /* SKILLS & ACTIVITIES */
+  .skills-activities {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .box {
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+  .box-title h2 {
+    font-size: 24px;
+  }
+
+  .pill {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* WORKS */
+  .works-section {
+    padding: 50px 20px;
+  }
+
+  .works-container {
+    padding: 25px 20px;
+    border-radius: 28px;
+  }
+
+  .works-title h2 {
+    font-size: 26px;
+  }
+
+  .works-title p {
+    font-size: 14px;
+  }
+
+  .work-image {
+    height: 140px;
+  }
+
+  /* SCRIBBLES — EXTRA SMALL FIX */
+.box-scribble{
+  display: block;
+  width: 220px;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box-scribble2 {
+  display: block;
+  width: 220px;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.works-scribble{
+  display: block;
+  width: 110px;
+  top: -35px;
+  left: 20%;
+}
+.works-scribble2 {
+  display: block;
+  width: 100px;
+  top: -26px;
+  left: 79%;
+}
+
+
+
+.contact-scribble,
+.contact-scribble2 {
+  display: block;
+  width: 100px;
+  top: 5%;
+}
+
+.contact-scribble { left: 19%; }
+.contact-scribble2 { left: 80%; }
+
+  /* MODAL */
+  .modal-content {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .modal-image {
+    height: 150px;
+  }
+
+  .modal-info h2 {
+    font-size: 18px;
+  }
+
+  .modal-info p {
+    font-size: 14px;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-header h2 {
+    font-size: 26px;
+  }
+
+  .contact-links {
+    align-items: flex-start;
+    padding-left: 0; 
+  }
+
+  .contact-item {
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  .footer p {
+    font-size: 12px;
+  }
+}
+
 }
