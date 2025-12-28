@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irricca Balin | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <main class="container">
+
+        <h1 class="title">Portfolio</h1>
+
+        <!-- PROFILE SECTION -->
+        <div class="profile-wrapper">
+
+            <!-- Animated background circles -->
+            <div class="bg-circle blue"></div>
+            <div class="bg-circle yellow"></div>
+            <div class="bg-circle pink"></div>
+
+            <!-- Profile image -->
+            <img src="assets/Icon.png" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <h2 class="name">IRRICCA G. BALIN</h2>
+
+        <button class="btn" id="viewDetailsBtn">View Details</button>
+
+    </main>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            setTimeout(() => {
+                container.classList.add('visible');
+            }, 100); 
+        });
+
+        const btn = document.getElementById('viewDetailsBtn');
+        btn.addEventListener('click', () => {
+            document.body.classList.add('slide-out'); 
+            setTimeout(() => {
+                window.location.href = 'main.html';
+            }, 500);
+        });
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #F9F8F6;
+    
+}
+
+/* MAIN CONTAINER */
+.container {
+    text-align: center;
+    position: relative;
+    padding: 30px 20px 60px;
+}
+
+/* Base hidden state */
+.container > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Visible state */
+.container.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for each child */
+.container.visible .title {
+  transition-delay: 0.2s;
+}
+
+.container.visible .profile-wrapper {
+  transition-delay: 0.4s;
+}
+
+.container.visible .name {
+  transition-delay: 0.6s;
+}
+
+.container.visible .btn {
+  transition-delay: 0.8s;
+}
+
+
+/* TITLE */
+.title {
+    font-size: 30px;
+    color: #05339C;
+    margin-bottom: 9rem;
+    font-weight: 500;
+}
+
+/* PROFILE WRAPPER */
+.profile-wrapper {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    margin: 0 auto;
+    overflow: visible; 
+}
+
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* BACKGROUND CIRCLES */
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(35px);
+    opacity: 0.65;
+    z-index: 1;
+    animation: float 10s ease-in-out infinite;
+}
+
+/* COLORS */
+.bg-circle.blue {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #3b82f6, #1e3a8a);
+    top: -40px;
+    left: -40px;
+}
+
+.bg-circle.yellow {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #facc15, #f59e0b);
+    bottom: -40px;
+    right: -30px;
+    animation-delay: 3s;
+}
+
+.bg-circle.pink {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #ec4899, #db2777);
+    top: 60%;
+    left: -30px;
+    animation-delay: 6s;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(25px, -25px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+
+/* NAME */
+.name {
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 28px;
+    padding: 10px 37px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1.5px solid #05339C;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #05339C;
+    color: #ffffff;
+}
+
+body.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideOut {
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 150px;
+    }
+
+    .profile-wrapper {
+        width: 240px;
+        height: 240px;
+    }
+
+    .name {
+        font-size: 26px;
+        margin-top: 30px;
+    }
+
+    .bg-circle.blue {
+        top: -80px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .bg-circle.blue2 {
+        left: -80px;
+        width: 170px;
+        height: 170px;
+    }
+
+    .bg-circle.blue3 {
+        right: -120px;
+        width: 170px;
+        height: 170px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .profile-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+}

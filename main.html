@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irricca Balin | Portfolio</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body>
+    <div id="page-wrapper" class="page-enter">
+  <!-- NAVBAR -->
+  <header class="navbar">
+  <a href="index.html" class="logo">Icca Balin</a>
+
+  <!-- HAMBURGER BUTTON -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu">
+    <a href="#hero">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#activities">Activities and Awards</a>
+    <a href="#works">My Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-left">
+      <img src="assets/Icon.png" alt="Profile" class="profile-img">
+    </div>
+
+    <div class="hero-right">
+      <div class="title-wrapper">
+        <h1>I’m a <span class="highlight">Web Developer</span></h1>
+        <!-- SCRIBBLE PNG -->
+        <img src="assets/scribble.png" alt="scribble" class="scribble">
+      </div>
+
+      <p>
+        Motivated Bachelor of Science in Information Technology student with
+        foundational technical skills gained through academic coursework and
+        school projects. Detail-oriented, adaptable, and eager to learn while
+        contributing positively in a professional and collaborative environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS & ACTIVITIES SECTION -->
+<section class="skills-activities">
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="box" id="skills">
+    <div class="box-title">
+      <h2>TECHNICAL SKILLS</h2>
+      <img src="assets/scribble2.png" alt="scribble" class="box-scribble2">
+    </div>
+
+    <div class="pill-grid">
+      <span class="pill">Front-end Development</span>
+      <span class="pill">Basic Back-end</span>
+      <span class="pill">Project Documentation</span>
+      <span class="pill">Digital Editing</span>
+      <span class="pill">Basic Troubleshooting</span>
+      <span class="pill">UI/UX Design</span>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES & AWARDS -->
+  <div class="box" id="activities">
+    <div class="box-title">
+      <h2>ACTIVITIES AND AWARDS</h2>
+      <img src="assets/scribble3.png" alt="scribble" class="box-scribble">
+    </div>
+
+    <div class="activities-grid">
+      <div class="activity-card">
+        <h3>Computer Artist Club</h3>
+        <p class="school">Guadalupe Catholic School</p>
+        <p class="year">2016–2019</p>
+        <p class="role">Editor and Photographer</p>
+      </div>
+
+      <div class="activity-card">
+        <h3>With Honors</h3>
+        <p class="school">High School</p>
+        <p class="year">2018–2020</p>
+      </div>
+
+      <div class="activity-card">
+        <h3>Animator Club</h3>
+        <p class="school">Guadalupe Catholic School</p>
+        <p class="year">2019–2020</p>
+        <p class="role">Journalist</p>
+      </div>
+
+      <div class="activity-card">
+        <h3>Dean’s Lister</h3>
+        <p class="school">1st Semester</p>
+        <p class="year">2024–2025</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- MY WORKS SECTION -->
+<section class="works-section" id="works">
+
+  <div class="works-container">
+
+    <div class="works-title">
+      <h2>MY WORKS</h2>
+      <img src="assets/scribble4.png" class="works-scribble" alt="scribble">
+      <img src="assets/scribble5.png" class="works-scribble2" alt="scribble">
+      <p>Academics Projects & Creative Works</p>
+    </div>
+
+    <!-- FILTER PILLS -->
+    <div class="works-filters">
+      <button class="filter active" data-filter="all">All Works</button>
+      <button class="filter" data-filter="web">Web Development</button>
+      <button class="filter" data-filter="uiux">UI/UX Design</button>
+      <button class="filter" data-filter="edit">Digital Edits</button>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="works-slider">
+
+      <button class="nav-btn prev">❮</button>
+
+      <div class="works-cards" id="worksCards"></div>
+
+      <button class="nav-btn next">❯</button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-header">
+      <img src="assets/scribble6.png" class="contact-scribble" alt="scribble">
+      <h2>CONTACT ME</h2>
+      <img src="assets/scribble7.png" class="contact-scribble2" alt="scribble">
+    </div>
+
+    <div class="contact-links">
+      <a href="tel:+639068507519" class="contact-item">
+        <i class="fas fa-phone-alt"></i> 09068507519
+      </a>
+      <a href="mailto:iccagoyenabalin@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i> iccagoyenabalin@gmail.com
+      </a>
+      <a href="https://www.facebook.com/icca.balin" target="_blank" class="contact-item">
+        <i class="fab fa-facebook-f"></i> Icca Balin
+      </a>
+      <a href="https://github.com/sojuwithice" target="_blank" class="contact-item">
+        <i class="fab fa-github"></i> sojuwithice
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Irricca G. Balin - Portfolio | All Rights Reserved</p>
+</footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="works-modal" id="worksModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+
+
+<script>
+//navbar (hamburger menu)
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+navMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+});
+
+
+//works data
+const works = [
+  {
+    category: "web",
+    type: "WEB DEVELOPMENT",
+    title: "KatiBayan Web Portal",
+    desc: "A web-based portal for Sangguniang Kabataan, designed to streamline youth profiling and engagement.",
+    details: "This capstone project was developed as a full-stack web application, with my role as Lead Developer handling both backend and frontend development.<br><br><b>ROLE: Lead Developer (Backend & Frontend)</b><br><br><b>TOOLS:</b> Frontend: HTML, CSS, JavaScript, Bootstrap<br>Backend: MySQL, Laravel Framework<br>Hosting/Deployment: Hostinger",
+    images: ["works/katibayan.png"]
+  },
+  {
+    category: "web",
+    type: "WEB DEVELOPMENT",
+    title: "Message Finder Web App",
+    desc: "A web-based application designed for searching and viewing messages, created as a fun and experimental project.",
+    details: "This project was developed to explore web development and UI/UX concepts, featuring a clean interface for composing, sending, and retrieving messages. <br><br><b>ROLE:</b> Full Stack Developer (Frontend & Backend)<br><br><b>TOOLS:</b> Frontend: HTML, CSS, JavaScript<br>Backend: Firebase Firestore<br>Hosting/Deployment: GitHub Pages",
+    images: [
+      "works/message-finder4.png",
+      "works/message-finder1.png",
+      "works/message-finder2.png",
+      "works/message-finder3.png",
+      "works/message-finder5.png"
+    ]
+  },
+  {
+    category: "uiux",
+    type: "UI / UX DESIGN",
+    title: "PlanPal Mobile Planner",
+    desc: "A user-centered mobile application design for PlanPal, focused on intuitive navigation and task management.",
+    details: "This planner app was designed in Figma, featuring a complete UX flow, user-friendly interface, and visually appealing design elements to enhance productivity and organization.<br><br><b>TOOL: FIGMA</b>",
+    images: ["works/planpal.png"]
+  },
+  {
+    category: "uiux",
+    type: "UI / UX DESIGN",
+    title: "Portfolio Prototype",
+    desc: "A prototype of my personal portfolio website, showcasing UI/UX design skills and interactive user experience.",
+    details: "This portfolio prototype was designed to demonstrate a clean, intuitive interface with responsive layouts and smooth navigation. Created in Figma, it highlights the design process from wireframes to final mockups.<br><br><b>TOOL: FIGMA</b>",
+    images: ["works/portfolio.png"]
+  },
+  {
+    category: "uiux",
+    type: "UI / UX DESIGN",
+    title: "Message Finder Web App",
+    desc: "A web app I designed just for fun, allowing users to search and view messages in a simple interface.",
+    details: "This project was created for learning and experimentation purposes, focusing on a clean, easy-to-use interface and interactive elements. Designed in Figma to explore UI/UX concepts in a fun way.<br><br><b>TOOL: FIGMA</b>",
+    images: ["works/message-finder.png"]
+  },
+{
+  category: "uiux",
+  type: "UI / UX DESIGN",
+  title: "Silong Login/Signup Page",
+  desc: "A school activity UI/UX design for a login and signup interface, including a forgot password feature.",
+  details: "This was my first UI/UX project, created as a school activity. It focuses on clean and intuitive interface design for user authentication, ensuring clarity and ease of use. Designed in Figma to plan layout, interactions, and user flow.<br><br><b>TOOL: FIGMA</b>",
+  images: ["works/silong.png"]
+},
+
+
+  {
+  category: "edit",
+  type: "DIGITAL EDITS",
+  title: "Custom Digital Poster",
+  desc: "A visually engaging digital poster created for a commissioned project.",
+  details: "This poster was designed as a commissioned work, focusing on clean layout, balanced typography, and strong visual hierarchy.<br><br><b>TOOL: CANVA</b>",
+  images: [
+    "works/coffeeproj1.png",
+    "works/coffeeproj2.png"
+  ]
+},
+{
+  category: "edit",
+  type: "DIGITAL EDITS",
+  title: "Commissioned Publication Material",
+  desc: "A set of digital publication materials created for a commissioned project.",
+  details: "This publication material was designed as a commissioned work, emphasizing clear communication, visually appealing layouts, and cohesive branding elements.<br><br><b>TOOL: CANVA</b>",
+  images: [
+    "works/pub1.png",
+    "works/pub2.png",
+    "works/pub3.png"
+  ]
+},
+{
+  category: "edit",
+  type: "DIGITAL EDITS",
+  title: "Creative Commissioned Poster",
+  desc: "A custom digital poster designed for a commissioned project with modern and eye-catching visuals.",
+  details: "This poster was created as a commissioned piece, highlighting a clean and balanced layout with effective use of typography and colors.<br><br><b>TOOL: CANVA</b>",
+  images: [
+    "works/coffeeposter1.png",
+    "works/coffeeposter2.png",
+    "works/coffeeposter3.png",
+    "works/coffeeposter4.png"
+  ]
+},
+{
+  category: "edit",
+  type: "DIGITAL EDITS",
+  title: "School Project Poster",
+  desc: "A digital poster created for a school project, designed to be visually engaging and informative.",
+  details: "This poster was created as a school project, focusing on clear communication, balanced layout, and appealing visuals suitable for academic purposes.<br><br><b>TOOL: CANVA</b>",
+  images: [
+    "works/poster1.png"
+  ]
+},
+{
+  category: "edit",
+  type: "DIGITAL EDITS",
+  title: "Schoolwork Activity Poster",
+  desc: "A digital poster created for a schoolwork activity, designed to clearly present information in an engaging and creative way.",
+  details: "This poster was created as a school project for a class activity, focusing on organized layout, effective communication, and visually appealing design suitable for academic purposes.<br><br><b>TOOLS: CANVA, IBIS PAINT</b>",
+  images: [
+    "works/schoolwork1.png",
+    "works/schoolwork2.png",
+    "works/schoolwork3.png",
+    "works/schoolwork4.png"
+  ]
+},
+
+
+
+
+
+];
+
+
+//elements
+const cardsContainer = document.getElementById("worksCards");
+const modal = document.getElementById("worksModal");
+const modalBody = modal.querySelector(".modal-body");
+const closeModal = modal.querySelector(".close-modal");
+
+const filters = document.querySelectorAll(".filter");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+
+// state
+let activeFilter = "all";
+let currentPage = 0;
+const itemsPerPage = 3;
+
+let slideIndex = 0;
+let slideInterval = null;
+
+
+// render works
+function renderWorks() {
+  cardsContainer.innerHTML = "";
+
+  const filteredWorks = activeFilter === "all"
+    ? works
+    : works.filter(w => w.category === activeFilter);
+
+  const start = currentPage * itemsPerPage;
+  const visibleWorks = filteredWorks.slice(start, start + itemsPerPage);
+
+  visibleWorks.forEach(work => {
+    const card = document.createElement("div");
+    card.className = "work-card";
+
+    card.innerHTML = `
+      <div class="work-image">
+        <img src="${work.images[0]}" alt="${work.title}">
+      </div>
+      <div class="work-info">
+        <h4>${work.type}</h4>
+        <h3>${work.title}</h3>
+        <p>${work.desc}</p>
+      </div>
+    `;
+
+    card.addEventListener("click", () => openModal(work));
+    cardsContainer.appendChild(card);
+  });
+
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = start + itemsPerPage >= filteredWorks.length;
+}
+
+
+//modal and slider
+function openModal(work) {
+  slideIndex = 0;
+  modal.classList.add("active");
+
+  modalBody.innerHTML = `
+    <div class="modal-slider">
+      <button class="modal-nav prev">❮</button>
+
+      <div class="modal-image">
+        <img id="modalSlide" src="${work.images[0]}" alt="${work.title}">
+      </div>
+
+      <button class="modal-nav next">❯</button>
+    </div>
+
+    <div class="modal-info">
+      <h4>${work.type}</h4>
+      <h2>${work.title}</h2>
+      <p>${work.details}</p>
+    </div>
+  `;
+
+  const slideImg = document.getElementById("modalSlide");
+  const prev = modal.querySelector(".modal-nav.prev");
+  const next = modal.querySelector(".modal-nav.next");
+
+  if (work.images.length === 1) {
+    prev.style.display = "none";
+    next.style.display = "none";
+    clearInterval(slideInterval);
+  } else {
+    prev.style.display = "block";
+    next.style.display = "block";
+
+    // automatic slideshow
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+      showSlide(slideIndex + 1);
+    }, 3000);
+  }
+
+  function showSlide(index) {
+    slideImg.classList.add("fade-out");
+
+    setTimeout(() => {
+      slideIndex = (index + work.images.length) % work.images.length;
+      slideImg.src = work.images[slideIndex];
+
+      slideImg.classList.remove("fade-out");
+      slideImg.classList.add("fade-in");
+
+      setTimeout(() => {
+        slideImg.classList.remove("fade-in");
+      }, 500);
+
+    }, 300);
+  }
+
+  prev.onclick = () => showSlide(slideIndex - 1);
+  next.onclick = () => showSlide(slideIndex + 1);
+}
+
+
+
+// Close modal function
+function closeWorksModal() {
+  modal.classList.remove("active");
+  clearInterval(slideInterval);
+}
+
+// Event delegation for modal clicks
+modal.addEventListener("click", (e) => {
+  
+  if (e.target === modal) closeWorksModal();
+  if (e.target.classList.contains("close-modal")) closeWorksModal();
+});
+
+modal.addEventListener("touchend", (e) => {
+  if (e.target.classList.contains("close-modal") || e.target === modal) {
+    closeWorksModal();
+  }
+});
+
+
+//filters
+filters.forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".filter.active").classList.remove("active");
+    btn.classList.add("active");
+
+    activeFilter = btn.dataset.filter;
+    currentPage = 0;
+    renderWorks();
+  });
+});
+
+//pagination
+nextBtn.addEventListener("click", () => {
+  currentPage++;
+  renderWorks();
+});
+
+prevBtn.addEventListener("click", () => {
+  currentPage = Math.max(0, currentPage - 1);
+  renderWorks();
+});
+
+
+//init
+renderWorks();
+
+window.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.getElementById("page-wrapper");
+  setTimeout(() => wrapper.classList.add("active"), 100);
+});
+</script>
+
+
+
+
+</body>
+</html>
