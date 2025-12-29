@@ -774,14 +774,42 @@ body {
     font-size: 14px;
   }
 
-  .nav-btn {
-    display: none;
-  }
+  .works-slider {
+  position: relative; /* make nav buttons absolute relative to slider */
+  display: flex;
+  align-items: center; /* vertically center cards */
+}
 
-  .works-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+.works-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.2; 
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  opacity: 1; 
+}
+
+.nav-btn.prev {
+  left: -25px; 
+}
+
+.nav-btn.next {
+  right: -25px; 
+}
+
 
   .work-image {
     height: 160px;
