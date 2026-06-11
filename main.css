@@ -452,6 +452,26 @@ body {
   object-fit: contain;
 }
 
+/* VIDEO CONTAINER — MATCH IMAGE SIZE */
+.modal-video {
+  width: 100%;
+  height: 220px;          /* SAME HEIGHT AS IMAGE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* VIDEO IFRAME — SAME BEHAVIOR AS IMAGE */
+.modal-video iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;       /* SAME LIMIT AS IMAGE */
+  border-radius: 16px;
+  border: none;
+}
+
+
 .modal-info h4 {
   color: #05339C;
   font-size: 14px;
@@ -775,9 +795,9 @@ body {
   }
 
   .works-slider {
-  position: relative; /* make nav buttons absolute relative to slider */
+  position: relative; 
   display: flex;
-  align-items: center; /* vertically center cards */
+  align-items: center; 
 }
 
 .works-cards {
@@ -788,6 +808,10 @@ body {
   scroll-behavior: smooth;
   gap: 20px;
 }
+
+.modal-video {
+    height: 180px;
+  }
 
 .nav-btn {
   position: absolute;

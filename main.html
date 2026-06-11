@@ -245,6 +245,31 @@ const works = [
     ]
   },
   {
+  category: "web",
+  type: "WEB DEVELOPMENT",
+  title: "Jowley's Crafts E-Commerce",
+  desc: "A web-based e-commerce platform for a small crafts business, designed as a group project.",
+  details: `This project was developed as a full-stack web application, with my role handling both backend and frontend development.<br><br>
+            <b>ROLE:</b> Full Stack Developer (Frontend & Backend)<br><br>
+            <b>TOOLS:</b> Frontend: HTML, CSS, JavaScript<br>
+            Backend: MySQL, Laravel Framework<br>
+            Hosting/Deployment: Hostinger`,
+  video: "https://www.youtube.com/watch?v=CbxnfoA2XC0",
+},
+{
+  category: "web",
+  type: "WEB DEVELOPMENT",
+  title: "BU ETEEAP Tracking and Monitoring System",
+  desc: "A web-based tracking and monitoring system for the BU ETEEAP program, designed to streamline student management.",
+  details: `This project was developed as a full-stack web application, with my role handling both backend and frontend development.<br><br>
+            <b>ROLE:</b> Full Stack Developer (Frontend & Backend)<br><br>
+            <b>TOOLS:</b> HTML, CSS, JavaScript, MySQL, Laravel Framework`,
+  images: [
+    "works/eteeap1.png",
+    "works/eteeap2.png"
+  ]
+},
+  {
     category: "uiux",
     type: "UI / UX DESIGN",
     title: "PlanPal Mobile Planner",
@@ -277,6 +302,14 @@ const works = [
   images: ["works/silong.png"]
 },
 
+{
+  category: "uiux",
+  type: "UI / UX DESIGN",
+  title: "Barangay Management System",
+  desc: "A group project UI/UX design for a web-based barangay management system.",
+  details: "This project was developed as a group activity, where I contributed to the UI/UX design. The system features a clean and structured interface for managing barangay information, residents, officials, blotter records, reports, and settings. The design focuses on usability, clarity, and efficient navigation for administrative users. Designed in Figma to plan layouts, user flow, and interface consistency.<br><br><b>TOOL: FIGMA</b>",
+  images: ["works/barangay.png"]
+},
 
   {
   category: "edit",
@@ -405,17 +438,37 @@ function openModal(work) {
   slideIndex = 0;
   modal.classList.add("active");
 
-  modalBody.innerHTML = `
-    <div class="modal-slider">
-      <button class="modal-nav prev">❮</button>
+  let mediaContent = "";
 
-      <div class="modal-image">
-        <img id="modalSlide" src="${work.images[0]}" alt="${work.title}">
+  // check if it's a video (you can add a new property 'video' to your works array)
+  if (work.video) {
+    mediaContent = `
+      <div class="modal-video">
+        <iframe 
+          src="${work.video}?autoplay=1&mute=1" 
+          title="${work.title}" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
       </div>
+    `;
+  } else {
+    mediaContent = `
+      <div class="modal-slider">
+        <button class="modal-nav prev">❮</button>
 
-      <button class="modal-nav next">❯</button>
-    </div>
+        <div class="modal-image">
+          <img id="modalSlide" src="${work.images[0]}" alt="${work.title}">
+        </div>
 
+        <button class="modal-nav next">❯</button>
+      </div>
+    `;
+  }
+
+  modalBody.innerHTML = `
+    ${mediaContent}
     <div class="modal-info">
       <h4>${work.type}</h4>
       <h2>${work.title}</h2>
@@ -423,45 +476,49 @@ function openModal(work) {
     </div>
   `;
 
-  const slideImg = document.getElementById("modalSlide");
-  const prev = modal.querySelector(".modal-nav.prev");
-  const next = modal.querySelector(".modal-nav.next");
+  if (!work.video) {
+    const slideImg = document.getElementById("modalSlide");
+    const prev = modal.querySelector(".modal-nav.prev");
+    const next = modal.querySelector(".modal-nav.next");
 
-  if (work.images.length === 1) {
-    prev.style.display = "none";
-    next.style.display = "none";
-    clearInterval(slideInterval);
-  } else {
-    prev.style.display = "block";
-    next.style.display = "block";
+    if (work.images.length === 1) {
+      prev.style.display = "none";
+      next.style.display = "none";
+      clearInterval(slideInterval);
+    } else {
+      prev.style.display = "block";
+      next.style.display = "block";
 
-    // automatic slideshow
-    clearInterval(slideInterval);
-    slideInterval = setInterval(() => {
-      showSlide(slideIndex + 1);
-    }, 3000);
-  }
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => {
+        showSlide(slideIndex + 1);
+      }, 3000);
+    }
 
-  function showSlide(index) {
-    slideImg.classList.add("fade-out");
-
-    setTimeout(() => {
-      slideIndex = (index + work.images.length) % work.images.length;
-      slideImg.src = work.images[slideIndex];
-
-      slideImg.classList.remove("fade-out");
-      slideImg.classList.add("fade-in");
+    function showSlide(index) {
+      slideImg.classList.add("fade-out");
 
       setTimeout(() => {
-        slideImg.classList.remove("fade-in");
-      }, 500);
+        slideIndex = (index + work.images.length) % work.images.length;
+        slideImg.src = work.images[slideIndex];
 
-    }, 300);
+        slideImg.classList.remove("fade-out");
+        slideImg.classList.add("fade-in");
+
+        setTimeout(() => {
+          slideImg.classList.remove("fade-in");
+        }, 500);
+
+      }, 300);
+    }
+
+    prev.onclick = () => showSlide(slideIndex - 1);
+    next.onclick = () => showSlide(slideIndex + 1);
   }
-
-  prev.onclick = () => showSlide(slideIndex - 1);
-  next.onclick = () => showSlide(slideIndex + 1);
 }
+
+
+
 
 
 
