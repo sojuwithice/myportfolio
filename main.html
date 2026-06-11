@@ -254,7 +254,8 @@ const works = [
             <b>TOOLS:</b> Frontend: HTML, CSS, JavaScript<br>
             Backend: MySQL, Laravel Framework<br>
             Hosting/Deployment: Hostinger`,
-  video: "https://www.youtube.com/watch?v=CbxnfoA2XC0",
+  video: "https://www.youtube.com/embed/CbxnfoA2XC0",
+  images: ["https://img.youtube.com/vi/CbxnfoA2XC0/maxresdefault.jpg"] 
 },
 {
   category: "web",
@@ -398,39 +399,7 @@ let slideIndex = 0;
 let slideInterval = null;
 
 
-// render works
-function renderWorks() {
-  cardsContainer.innerHTML = "";
 
-  const filteredWorks = activeFilter === "all"
-    ? works
-    : works.filter(w => w.category === activeFilter);
-
-  const start = currentPage * itemsPerPage;
-  const visibleWorks = filteredWorks.slice(start, start + itemsPerPage);
-
-  visibleWorks.forEach(work => {
-    const card = document.createElement("div");
-    card.className = "work-card";
-
-    card.innerHTML = `
-      <div class="work-image">
-        <img src="${work.images[0]}" alt="${work.title}">
-      </div>
-      <div class="work-info">
-        <h4>${work.type}</h4>
-        <h3>${work.title}</h3>
-        <p>${work.desc}</p>
-      </div>
-    `;
-
-    card.addEventListener("click", () => openModal(work));
-    cardsContainer.appendChild(card);
-  });
-
-  prevBtn.disabled = currentPage === 0;
-  nextBtn.disabled = start + itemsPerPage >= filteredWorks.length;
-}
 
 
 //modal and slider
@@ -441,30 +410,37 @@ function openModal(work) {
   let mediaContent = "";
 
   // check if it's a video (you can add a new property 'video' to your works array)
-  if (work.video) {
-    mediaContent = `
-      <div class="modal-video">
-        <iframe 
-          src="${work.video}?autoplay=1&mute=1" 
-          title="${work.title}" 
-          frameborder="0" 
-          allow="autoplay; encrypted-media" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    `;
-  } else {
-    mediaContent = `
-      <div class="modal-slider">
-        <button class="modal-nav prev">❮</button>
+ if (work.video) {
+  let videoURL = work.video;
 
-        <div class="modal-image">
-          <img id="modalSlide" src="${work.images[0]}" alt="${work.title}">
-        </div>
+  if (videoURL.includes("watch?v=")) {
+    const id = videoURL.split("watch?v=")[1];
+    videoURL = `https://www.youtube.com/embed/${id}`;
+  }
 
-        <button class="modal-nav next">❯</button>
-      </div>
-    `;
+  mediaContent = `
+    <div class="modal-video">
+      <iframe 
+        src="${videoURL}?autoplay=1&mute=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `;
+} else {
+ mediaContent = `
+  <div class="modal-video">
+    <iframe 
+      width="100%" 
+      height="400"
+      src="${videoURL}?autoplay=1&mute=1"
+      title="${work.title}"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+`;
   }
 
   modalBody.innerHTML = `
@@ -587,15 +563,15 @@ function renderWorks() {
     ? works
     : works.filter(w => w.category === activeFilter);
 
-  const itemsPerPage = getItemsPerPage(); // <-- update
+  const perPage = getItemsPerPage();
 
-  const start = currentPage * itemsPerPage;
-  const visibleWorks = filteredWorks.slice(start, start + itemsPerPage);
+  const start = currentPage * perPage;
+  const visibleWorks = filteredWorks.slice(start, start + perPage);
 
   visibleWorks.forEach(work => {
     const card = document.createElement("div");
-    card.className = "work-card";
 
+    card.className = "work-card";
     card.innerHTML = `
       <div class="work-image">
         <img src="${work.images[0]}" alt="${work.title}">
@@ -612,7 +588,7 @@ function renderWorks() {
   });
 
   prevBtn.disabled = currentPage === 0;
-  nextBtn.disabled = start + itemsPerPage >= filteredWorks.length;
+  nextBtn.disabled = start + perPage >= filteredWorks.length;
 }
 
 // update on window resize
