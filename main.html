@@ -407,44 +407,58 @@ function openModal(work) {
   slideIndex = 0;
   modal.classList.add("active");
 
-  let mediaContent = "";
+  // VIDEO PROJECT
+  if (work.video) {
 
-  // check if it's a video (you can add a new property 'video' to your works array)
- if (work.video) {
-  let videoURL = work.video;
+    let videoURL = work.video;
 
-  if (videoURL.includes("watch?v=")) {
-    const id = videoURL.split("watch?v=")[1];
-    videoURL = `https://www.youtube.com/embed/${id}`;
+    if (videoURL.includes("watch?v=")) {
+      const id = videoURL.split("watch?v=")[1];
+      videoURL = `https://www.youtube.com/embed/${id}`;
+    }
+
+    modalBody.innerHTML = `
+      <div class="modal-video">
+        <iframe
+          width="100%"
+          height="450"
+          src="${videoURL}?autoplay=1&mute=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="modal-info">
+        <h4>${work.type}</h4>
+        <h2>${work.title}</h2>
+        <p>${work.details}</p>
+      </div>
+    `;
+
+    return;
   }
 
-  mediaContent = `
-    <div class="modal-video">
-      <iframe 
-        src="${videoURL}?autoplay=1&mute=1"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-    </div>
-  `;
-} else {
- mediaContent = `
-  <div class="modal-video">
-    <iframe 
-      width="100%" 
-      height="400"
-      src="${videoURL}?autoplay=1&mute=1"
-      title="${work.title}"
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-`;
-  }
-
+  // IMAGE PROJECT
   modalBody.innerHTML = `
-    ${mediaContent}
+    <div class="modal-slider">
+
+      ${
+        work.images.length > 1
+          ? '<button class="modal-nav prev">&#10094;</button>'
+          : ''
+      }
+
+      <img id="modalSlide" src="${work.images[0]}" alt="${work.title}">
+
+      ${
+        work.images.length > 1
+          ? '<button class="modal-nav next">&#10095;</button>'
+          : ''
+      }
+
+    </div>
+
     <div class="modal-info">
       <h4>${work.type}</h4>
       <h2>${work.title}</h2>
@@ -452,49 +466,31 @@ function openModal(work) {
     </div>
   `;
 
-  if (!work.video) {
-    const slideImg = document.getElementById("modalSlide");
+  const slideImg = document.getElementById("modalSlide");
+
+  if (work.images.length > 1) {
+
     const prev = modal.querySelector(".modal-nav.prev");
     const next = modal.querySelector(".modal-nav.next");
 
-    if (work.images.length === 1) {
-      prev.style.display = "none";
-      next.style.display = "none";
-      clearInterval(slideInterval);
-    } else {
-      prev.style.display = "block";
-      next.style.display = "block";
-
-      clearInterval(slideInterval);
-      slideInterval = setInterval(() => {
-        showSlide(slideIndex + 1);
-      }, 3000);
-    }
-
     function showSlide(index) {
-      slideImg.classList.add("fade-out");
-
-      setTimeout(() => {
-        slideIndex = (index + work.images.length) % work.images.length;
-        slideImg.src = work.images[slideIndex];
-
-        slideImg.classList.remove("fade-out");
-        slideImg.classList.add("fade-in");
-
-        setTimeout(() => {
-          slideImg.classList.remove("fade-in");
-        }, 500);
-
-      }, 300);
+      slideIndex = (index + work.images.length) % work.images.length;
+      slideImg.src = work.images[slideIndex];
     }
 
     prev.onclick = () => showSlide(slideIndex - 1);
     next.onclick = () => showSlide(slideIndex + 1);
+
+    clearInterval(slideInterval);
+
+    slideInterval = setInterval(() => {
+      showSlide(slideIndex + 1);
+    }, 3000);
+
+  } else {
+    clearInterval(slideInterval);
   }
 }
-
-
-
 
 
 
